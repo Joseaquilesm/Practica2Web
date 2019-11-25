@@ -17,7 +17,7 @@ public class Main {
 
             Configuration configuration = new Configuration(Configuration.VERSION_2_3_29);
             configuration.setClassForTemplateLoading(Main.class, "/");
-
+            port(6969);
             staticFiles.location("/public");
 
         //GET del main view
