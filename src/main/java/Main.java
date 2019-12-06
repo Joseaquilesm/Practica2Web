@@ -13,11 +13,17 @@ public class Main {
 
     public static void main(String[] args){
         {
+            ProcessBuilder processBuilder = new ProcessBuilder();
+            if (processBuilder.environment().get("PORT") != null) {
+                port(Integer.parseInt(processBuilder.environment().get("PORT")));
+            }else{
+                port(8080);
+            }
+            
             ArrayList<Estudiante> lista = new ArrayList<Estudiante>();
 
             Configuration configuration = new Configuration(Configuration.VERSION_2_3_29);
             configuration.setClassForTemplateLoading(Main.class, "/");
-            port(6969);
             staticFiles.location("/public");
 
         //GET del main view
