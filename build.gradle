@@ -9,20 +9,14 @@ group 'practica2'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
-mainClassName = "Main"
-shadowJar {
-    baseName = 'practica2'
-    classifier = null
-    version = null
-}
+mainClassName = 'Main'
+
 
 repositories {
     mavenCentral()
 }
 
-task stage {
-    dependsOn shadowJar
-}
+
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -32,4 +26,14 @@ dependencies {
     // https://mvnrepository.com/artifact/org.freemarker/freemarker
     compile group: 'org.freemarker', name: 'freemarker', version: '2.3.29'
 
+}
+
+shadowJar {
+    baseName = 'practica2'
+    classifier = null
+    version = null
+}
+
+task stage {
+    dependsOn shadowJar
 }
